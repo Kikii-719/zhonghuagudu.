@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西安地方美食 - 十三朝古都</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="food.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 西安页面导航栏 -->
+    <nav class="city-nav xian-nav">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo"><i class="fas fa-landmark"></i> 西安·十三朝古都</h1>
+                <div class="nav-subtitle">千年古都，常来长安</div>
+            </div>
+            <ul class="city-nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> 主首页</a></li>
+                <li><a href="西安首页.html"><i class="fas fa-city"></i> 西安首页</a></li>
+                <li><a href="scenic.html"><i class="fas fa-mountain"></i> 主要景点</a></li>
+                <li><a href="food.html" class="active"><i class="fas fa-utensils"></i> 地方美食</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 美食页面标题 -->
+    <header class="food-header">
+        <div class="container">
+            <h1 class="page-title">西安地方美食</h1>
+            <p class="page-subtitle">品味千年古都的舌尖记忆，感受关中风味</p>
+        </div>
+    </header>
+
+    <!-- 美食介绍 -->
+    <section class="food-intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>西安美食文化</h2>
+                    <p>西安作为十三朝古都，其饮食文化源远流长，融合了周、秦、汉、唐等各个历史时期的饮食特点。西安美食以面食为主，口味偏重，讲究原汁原味，体现了关中地区朴实厚重的风土人情。</p>
+                    <p>回民街是西安美食的集中地，这里汇集了上百种西安特色小吃，是游客品尝西安美食的必去之地。此外，永兴坊、洒金桥等地也是寻找地道西安美食的好去处。</p>
+                    <div class="food-features">
+                        <div class="feature">
+                            <i class="fas fa-bread-slice"></i>
+                            <span>面食为主</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-pepper-hot"></i>
+                            <span>口味醇厚</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-history"></i>
+                            <span>历史悠久</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-utensil-spoon"></i>
+                            <span>做法独特</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="images/美食主图.jpg" alt="西安美食">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 招牌美食 -->
+    <section class="signature-foods">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">西安招牌美食</h2>
+                <p class="section-subtitle">不可错过的西安特色美食</p>
+            </div>
+            
+            <!-- 羊肉泡馍 -->
+            <div class="food-card" data-category="主食" data-spicy="1" data-price="中">
+                <div class="food-image">
+                    <img src="images/羊肉泡馍.jpg" alt="羊肉泡馍">
+                    <div class="food-badge">
+                        <span class="badge must-try">必吃美食</span>
+                    </div>
+                </div>
+                <div class="food-content">
+                    <div class="food-header">
+                        <h3 class="food-title">羊肉泡馍</h3>
+                        <div class="food-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-score">4.7</span>
+                        </div>
+                    </div>
+                    <p class="food-desc">羊肉泡馍是西安最具代表性的美食之一。将特制的馍掰成小块，加入羊肉高汤中煮熟，配上羊肉片、粉丝、木耳等配料。汤鲜肉烂，馍筋道入味。</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>主食</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-pepper-hot"></i>
+                            <span>微辣</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tag"></i>
+                            <span>¥35-50</span>
+                        </div>
+                    </div>
+                    <div class="food-origin">
+                        <h4>起源故事</h4>
+                        <p>羊肉泡馍起源于北宋时期，最初是士兵的军粮。士兵将干粮掰碎泡在热汤中食用，后来逐渐演变成现在的羊肉泡馍，成为西安最具代表性的美食之一。</p>
+                    </div>
+                    <div class="food-actions">
+                        <button class="btn-outline add-to-favorite"><i class="far fa-heart"></i> 收藏</button>
+                        <button class="btn-outline view-recipe" data-target="yangrou-paomo"><i class="fas fa-book-open"></i> 查看做法</button>
+                        <button class="btn-outline find-restaurant" data-food="羊肉泡馍"><i class="fas fa-map-marker-alt"></i> 推荐餐馆</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 肉夹馍 -->
+            <div class="food-card" data-category="小吃" data-spicy="0" data-price="低">
+                <div class="food-image">
+                    <img src="images/肉夹馍.jpg" alt="肉夹馍">
+                    <div class="food-badge">
+                        <span class="badge must-try">必吃美食</span>
+                    </div>
+                </div>
+                <div class="food-content">
+                    <div class="food-header">
+                        <h3 class="food-title">肉夹馍</h3>
+                        <div class="food-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-score">4.9</span>
+                        </div>
+                    </div>
+                    <p class="food-desc">肉夹馍被称为"中国的汉堡包"，是西安最著名的小吃之一。将烤制好的白吉馍切开，夹入炖得酥烂的五花肉或腊汁肉，肉香馍脆，回味无穷。</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>小吃</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-pepper-hot"></i>
+                            <span>不辣</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tag"></i>
+                            <span>¥10-15</span>
+                        </div>
+                    </div>
+                    <div class="food-origin">
+                        <h4>起源故事</h4>
+                        <p>肉夹馍的历史可以追溯到战国时期，但现在的形式是在明清时期形成的。"肉夹馍"其实是"肉夹于馍"的简称，是古汉语的倒装句式，意为"肉夹在馍中"。</p>
+                    </div>
+                    <div class="food-actions">
+                        <button class="btn-outline add-to-favorite"><i class="far fa-heart"></i> 收藏</button>
+                        <button class="btn-outline view-recipe" data-target="roujiamo"><i class="fas fa-book-open"></i> 查看做法</button>
+                        <button class="btn-outline find-restaurant" data-food="肉夹馍"><i class="fas fa-map-marker-alt"></i> 推荐餐馆</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 凉皮 -->
+            <div class="food-card" data-category="小吃" data-spicy="2" data-price="低">
+                <div class="food-image">
+                    <img src="images/凉皮.jpg" alt="凉皮">
+                    <div class="food-badge">
+                        <span class="badge vegetarian">素食可选</span>
+                    </div>
+                </div>
+                <div class="food-content">
+                    <div class="food-header">
+                        <h3 class="food-title">凉皮</h3>
+                        <div class="food-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-score">4.8</span>
+                        </div>
+                    </div>
+                    <p class="food-desc">凉皮是西安夏季最受欢迎的小吃。用面粉洗出面筋，蒸制而成的米皮或面皮，配上黄瓜丝、豆芽、面筋等，浇上特制的辣椒油、醋、蒜水等调料，酸辣爽口。</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>小吃</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-pepper-hot"></i>
+                            <span>中辣</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tag"></i>
+                            <span>¥8-15</span>
+                        </div>
+                    </div>
+                    <div class="food-origin">
+                        <h4>起源故事</h4>
+                        <p>凉皮起源于秦汉时期，最初是陕西关中地区的农家小吃。唐代时成为长安城内流行的小吃，因其凉爽可口、解暑开胃的特点，一直流传至今。</p>
+                    </div>
+                    <div class="food-actions">
+                        <button class="btn-outline add-to-favorite"><i class="far fa-heart"></i> 收藏</button>
+                        <button class="btn-outline view-recipe" data-target="liangpi"><i class="fas fa-book-open"></i> 查看做法</button>
+                        <button class="btn-outline find-restaurant" data-food="凉皮"><i class="fas fa-map-marker-alt"></i> 推荐餐馆</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Biangbiang面 -->
+            <div class="food-card" data-category="主食" data-spicy="2" data-price="中">
+                <div class="food-image">
+                   <img src="images/面.jpg" alt="Biangbiang面">
+                    <div class="food-badge">
+                        <span class="badge special">特色面食</span>
+                    </div>
+                </div>
+                <div class="food-content">
+                    <div class="food-header">
+                        <h3 class="food-title">Biangbiang面</h3>
+                        <div class="food-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-score">4.6</span>
+                        </div>
+                    </div>
+                    <p class="food-desc">Biangbiang面是陕西关中地区的特色面食，因制作过程中面条摔打在案板上发出"biangbiang"的声音而得名。面条宽如裤带，口感筋道，配上油泼辣子、肉臊子、蔬菜等配料。</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>主食</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-pepper-hot"></i>
+                            <span>中辣</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tag"></i>
+                            <span>¥20-35</span>
+                        </div>
+                    </div>
+                    <div class="food-origin">
+                        <h4>起源故事</h4>
+                        <p>Biangbiang面是陕西八大怪之一"面条像裤带"的代表。关于"biang"字的来源有多种传说，其中一种是秦始皇吃面时为这种面食创造的字，该字共有56画，是汉字中最复杂的字之一。</p>
+                    </div>
+                    <div class="food-actions">
+                        <button class="btn-outline add-to-favorite"><i class="far fa-heart"></i> 收藏</button>
+                        <button class="btn-outline view-recipe" data-target="biangbiangmian"><i class="fas fa-book-open"></i> 查看做法</button>
+                        <button class="btn-outline find-restaurant" data-food="Biangbiang面"><i class="fas fa-map-marker-alt"></i> 推荐餐馆</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 胡辣汤 -->
+            <div class="food-card" data-category="早餐" data-spicy="3" data-price="低">
+                <div class="food-image">
+                    <img src="images/胡辣汤.jpg" alt="胡辣汤">
+                    <div class="food-badge">
+                        <span class="badge breakfast">经典早餐</span>
+                    </div>
+                </div>
+                <div class="food-content">
+                    <div class="food-header">
+                        <h3 class="food-title">胡辣汤</h3>
+                        <div class="food-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-score">4.7</span>
+                        </div>
+                    </div>
+                    <p class="food-desc">胡辣汤是西安人最爱的早餐之一。用牛肉或羊肉熬制的高汤，加入胡椒、花椒等数十种香料，配上肉丸、豆腐皮、木耳、粉丝等，味道麻辣鲜香，暖胃驱寒。</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>早餐</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-pepper-hot"></i>
+                            <span>重辣</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tag"></i>
+                            <span>¥8-12</span>
+                        </div>
+                    </div>
+                    <div class="food-origin">
+                        <h4>起源故事</h4>
+                        <p>胡辣汤起源于河南，但在西安发展出了自己的特色。西安的胡辣汤分为回民的肉丸胡辣汤和汉民的肉丁胡辣汤两种，是西安人清晨最温暖的开端。</p>
+                    </div>
+                    <div class="food-actions">
+                        <button class="btn-outline add-to-favorite"><i class="far fa-heart"></i> 收藏</button>
+                        <button class="btn-outline view-recipe" data-target="hulatang"><i class="fas fa-book-open"></i> 查看做法</button>
+                        <button class="btn-outline find-restaurant" data-food="胡辣汤"><i class="fas fa-map-marker-alt"></i> 推荐餐馆</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 美食文化 -->
+    <section class="food-culture">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">西安美食文化</h2>
+                <p class="section-subtitle">品味千年古都的饮食智慧</p>
+            </div>
+            <div class="culture-grid">
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>历史渊源</h3>
+                    <p>西安美食文化源远流长，周代的"八珍"、汉代的"胡食"、唐代的"烧尾宴"都对西安美食产生了深远影响。丝绸之路的开通带来了西域的食材和烹饪技法。</p>
+                </div>
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>民族融合</h3>
+                    <p>西安是多民族聚居地，回族、汉族等民族的饮食文化相互交融。回民街的穆斯林美食与汉族的传统小吃相得益彰，形成了独特的西安美食文化。</p>
+                </div>
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-wheat-alt"></i>
+                    </div>
+                    <h3>面食文化</h3>
+                    <p>西安地处关中平原，小麦是主要作物，因此面食成为西安饮食的主体。从馍到面，从饼到糕，西安人将面食做到了极致，有"陕西八大怪，面条像裤带"之说。</p>
+                </div>
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                    <h3>调味特色</h3>
+                    <p>西安美食口味偏重，善用辣椒、花椒、醋等调料。油泼辣子、岐山醋是西安美食的灵魂。酸辣口味既能开胃，又能抵御关中地区的寒冷气候。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 美食节庆 -->
+    <section class="food-festivals">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">西安美食节庆</h2>
+                <p class="section-subtitle">体验美食与文化的完美结合</p>
+            </div>
+            <div class="festival-slider">
+                <div class="festival-card">
+                    <div class="festival-image">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="西安美食节">
+                    </div>
+                    <div class="festival-content">
+                        <h3>西安国际美食节</h3>
+                        <p class="festival-date">每年5月</p>
+                        <p class="festival-desc">西安最大的美食盛会，汇集陕西各地特色美食，同时邀请国内外名厨展示烹饪技艺，是美食爱好者的天堂。</p>
+                        <a href="#" class="festival-link">了解更多</a>
+                    </div>
+                </div>
+                <div class="festival-card">
+                    <div class="festival-image">
+                        <img src="images/文化节.jpg" alt="回民街美食文化节">
+                    </div>
+                    <div class="festival-content">
+                        <h3>回民街美食文化节</h3>
+                        <p class="festival-date">每年10月</p>
+                        <p class="festival-desc">在回民街举办的美食文化节，展示回族传统美食制作工艺，同时有民间艺术表演和文化展览。</p>
+                        <a href="#" class="festival-link">了解更多</a>
+                    </div>
+                </div>
+                <div class="festival-card">
+                    <div class="festival-image">
+                        <img src="images/面食.jpg" alt="面食文化节">
+                    </div>
+                    <div class="festival-content">
+                        <h3>陕西面食文化节</h3>
+                        <p class="festival-date">每年8月</p>
+                        <p class="festival-desc">展示陕西各地特色面食，包括biangbiang面、岐山臊子面、杨凌蘸水面等，同时有面食制作大赛。</p>
+                        <a href="#" class="festival-link">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="city-footer xian-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><i class="fas fa-landmark"></i> 西安古都</h3>
+                    <p>十三朝古都，丝绸之路起点</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>西安页面</h4>
+                    <ul>
+                        <li><a href="西安首页.html"><i class="fas fa-chevron-right"></i> 西安首页</a></li>
+                        <li><a href="scenic.html"><i class="fas fa-chevron-right"></i> 主要景点</a></li>
+                        <li><a href="food.html"><i class="fas fa-chevron-right"></i> 地方美食</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>其他古都</h4>
+                    <ul>
+                        <li><a href="../蔡恩熙/北京首页.html"><i class="fas fa-chevron-right"></i> 北京</a></li>
+                        <li><a href="../李诗婷/南京首页.html"><i class="fas fa-chevron-right"></i> 南京</a></li>
+                        <li><a href="../index.html"><i class="fas fa-chevron-right"></i> 主首页</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>制作信息</h4>
+                    <p><i class="fas fa-user"></i> 王佩绮制作</p>
+                    <p><i class="fas fa-calendar"></i> 2025年</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 中国古都 - 西安模块 | 千年古都，常来长安</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 食谱模态框 -->
+    <div class="modal-overlay" id="recipe-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body" id="recipe-body">
+                <!-- 动态内容 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 餐馆推荐模态框 -->
+    <div class="modal-overlay" id="restaurant-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body" id="restaurant-body">
+                <!-- 动态内容 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+    <script src="food.js"></script>
+</body>
+</html>

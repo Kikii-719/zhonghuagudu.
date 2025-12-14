@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西安主要景点 - 十三朝古都</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scenic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 西安页面导航栏 -->
+    <nav class="city-nav xian-nav">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo"><i class="fas fa-landmark"></i> 西安·十三朝古都</h1>
+                <div class="nav-subtitle">千年古都，常来长安</div>
+            </div>
+            <ul class="city-nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> 主首页</a></li>
+                <li><a href="西安首页.html"><i class="fas fa-city"></i> 西安首页</a></li>
+                <li><a href="scenic.html" class="active"><i class="fas fa-mountain"></i> 主要景点</a></li>
+                <li><a href="food.html"><i class="fas fa-utensils"></i> 地方美食</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 景点页面标题 -->
+    <header class="scenic-header">
+        <div class="container">
+            <h1 class="page-title">西安主要景点</h1>
+            <p class="page-subtitle">探索十三朝古都的历史遗迹与文化瑰宝</p>
+        </div>
+    </header>
+
+    <!-- 景点筛选/搜索 -->
+    <section class="scenic-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="search-box">
+                    <input type="text" placeholder="搜索景点..." id="scenic-search">
+                    <button type="button" id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-tags">
+                    <button class="filter-tag active" data-filter="all">全部景点</button>
+                    <button class="filter-tag" data-filter="world-heritage">世界遗产</button>
+                    <button class="filter-tag" data-filter="ancient">古迹遗址</button>
+                    <button class="filter-tag" data-filter="cultural">文化地标</button>
+                    <button class="filter-tag" data-filter="nature">自然风光</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要景点列表 -->
+    <section class="scenic-list">
+        <div class="container">
+            <!-- 秦始皇兵马俑 -->
+            <div class="scenic-item world-heritage ancient" data-name="秦始皇兵马俑">
+                <div class="scenic-image">
+                    <img src="images/兵马俑.jpg" alt="秦始皇兵马俑">
+                    <div class="scenic-badge">
+                        <span class="badge world-heritage">世界遗产</span>
+                        <span class="badge must-see">必看景点</span>
+                    </div>
+                </div>
+                <div class="scenic-content">
+                    <h2 class="scenic-title">秦始皇兵马俑</h2>
+                    <div class="scenic-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> 西安市临潼区</span>
+                        <span><i class="fas fa-clock"></i> 建议游览: 3-4小时</span>
+                        <span><i class="fas fa-ticket-alt"></i> 门票: ¥120</span>
+                    </div>
+                    <p class="scenic-desc">秦始皇兵马俑是世界第八大奇迹，是秦始皇陵的陪葬坑，位于西安市临潼区。目前已发掘三个坑，共有陶俑、陶马约8000件，战车百余乘，兵器数万件。兵马俑制作工艺精湛，形态各异，反映了秦代军事编制、作战方式、军事装备等历史信息。</p>
+                    <div class="scenic-features">
+                        <h4>景点特色:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> 世界文化遗产</li>
+                            <li><i class="fas fa-check-circle"></i> 规模宏大的地下军阵</li>
+                            <li><i class="fas fa-check-circle"></i> 陶俑形态各异，栩栩如生</li>
+                            <li><i class="fas fa-check-circle"></i> 铜车马工艺精湛</li>
+                        </ul>
+                    </div>
+                    <div class="scenic-actions">
+                        <a href="#map-1" class="btn-outline"><i class="fas fa-map"></i> 查看地图</a>
+                        <button class="btn-outline add-to-plan"><i class="far fa-heart"></i> 加入行程</button>
+                        <button class="btn-outline scenic-detail" data-target="terracotta-army"><i class="fas fa-info-circle"></i> 详细信息</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 大雁塔 -->
+            <div class="scenic-item world-heritage cultural" data-name="大雁塔">
+                <div class="scenic-image">
+                    <img src="images/大雁塔.jpg" alt="大雁塔">
+                    <div class="scenic-badge">
+                        <span class="badge world-heritage">世界遗产</span>
+                        <span class="badge buddhist">佛教圣地</span>
+                    </div>
+                </div>
+                <div class="scenic-content">
+                    <h2 class="scenic-title">大雁塔</h2>
+                    <div class="scenic-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> 西安市雁塔区</span>
+                        <span><i class="fas fa-clock"></i> 建议游览: 2-3小时</span>
+                        <span><i class="fas fa-ticket-alt"></i> 门票: ¥50</span>
+                    </div>
+                    <p class="scenic-desc">大雁塔位于大慈恩寺内，是玄奘法师为保存从印度带回的佛经、佛像而主持修建的佛塔。塔高64.5米，共七层，呈方形锥体，是唐代楼阁式砖塔的典范。大雁塔不仅是一座佛教建筑，也是唐代长安城的标志性建筑，见证了古代丝绸之路的文化交流。</p>
+                    <div class="scenic-features">
+                        <h4>景点特色:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> 唐代楼阁式砖塔典范</li>
+                            <li><i class="fas fa-check-circle"></i> 玄奘法师主持修建</li>
+                            <li><i class="fas fa-check-circle"></i> 收藏珍贵佛教文物</li>
+                            <li><i class="fas fa-check-circle"></i> 登塔俯瞰西安城景</li>
+                        </ul>
+                    </div>
+                    <div class="scenic-actions">
+                        <a href="#map-2" class="btn-outline"><i class="fas fa-map"></i> 查看地图</a>
+                        <button class="btn-outline add-to-plan"><i class="far fa-heart"></i> 加入行程</button>
+                        <button class="btn-outline scenic-detail" data-target="big-wild-goose-pagoda"><i class="fas fa-info-circle"></i> 详细信息</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 西安古城墙 -->
+            <div class="scenic-item ancient cultural" data-name="西安城墙">
+                <div class="scenic-image">
+                    <img src="images/西安古城墙.jpg" alt="西安古城墙">
+                    <div class="scenic-badge">
+                        <span class="badge ancient">古迹遗址</span>
+                        <span class="badge must-see">必看景点</span>
+                    </div>
+                </div>
+                <div class="scenic-content">
+                    <h2 class="scenic-title">西安古城墙</h2>
+                    <div class="scenic-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> 西安市中心</span>
+                        <span><i class="fas fa-clock"></i> 建议游览: 2-3小时</span>
+                        <span><i class="fas fa-ticket-alt"></i> 门票: ¥54</span>
+                    </div>
+                    <p class="scenic-desc">西安城墙是中国现存规模最大、保存最完整的古代城垣。城墙周长13.74公里，高12米，顶宽12-14米，底宽15-18米。现存城墙为明代建筑，是在唐代皇城基础上扩建而成。城墙设有四座主城门:长乐门(东门)、永宁门(南门)、安定门(西门)、安远门(北门)。游客可步行、骑自行车或乘坐电瓶车游览城墙。</p>
+                    <div class="scenic-features">
+                        <h4>景点特色:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> 中国现存最完整的古代城垣</li>
+                            <li><i class="fas fa-check-circle"></i> 可骑自行车环游城墙</li>
+                            <li><i class="fas fa-check-circle"></i> 观赏西安城市全景</li>
+                            <li><i class="fas fa-check-circle"></i> 夜间灯光秀表演</li>
+                        </ul>
+                    </div>
+                    <div class="scenic-actions">
+                        <a href="#map-3" class="btn-outline"><i class="fas fa-map"></i> 查看地图</a>
+                        <button class="btn-outline add-to-plan"><i class="far fa-heart"></i> 加入行程</button>
+                        <button class="btn-outline scenic-detail" data-target="city-wall"><i class="fas fa-info-circle"></i> 详细信息</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 钟鼓楼 -->
+            <div class="scenic-item cultural" data-name="钟鼓楼">
+                <div class="scenic-image">
+                    <img src="images/钟鼓楼.jpg" alt="钟鼓楼">
+                    <div class="scenic-badge">
+                        <span class="badge cultural">文化地标</span>
+                        <span class="badge historical">历史建筑</span>
+                    </div>
+                </div>
+                <div class="scenic-content">
+                    <h2 class="scenic-title">钟鼓楼</h2>
+                    <div class="scenic-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> 西安市中心</span>
+                        <span><i class="fas fa-clock"></i> 建议游览: 1-2小时</span>
+                        <span><i class="fas fa-ticket-alt"></i> 联票: ¥50</span>
+                    </div>
+                    <p class="scenic-desc">钟楼和鼓楼位于西安市中心，是明代建筑的典型代表。钟楼建于1384年，高36米，是中国现存钟楼中形制最大、保存最完整的一座。鼓楼建于1380年，高34米，是中国古代遗留下来众多鼓楼中规模最大、保存最完整的鼓楼之一。两楼相望，是古代西安城的报时中心，现已成为西安的标志性建筑。</p>
+                    <div class="scenic-features">
+                        <h4>景点特色:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> 西安城市中心地标</li>
+                            <li><i class="fas fa-check-circle"></i> 明代建筑艺术典范</li>
+                            <li><i class="fas fa-check-circle"></i> 登楼俯瞰市中心全景</li>
+                            <li><i class="fas fa-check-circle"></i> 鼓乐表演定时举行</li>
+                        </ul>
+                    </div>
+                    <div class="scenic-actions">
+                        <a href="#map-4" class="btn-outline"><i class="fas fa-map"></i> 查看地图</a>
+                        <button class="btn-outline add-to-plan"><i class="far fa-heart"></i> 加入行程</button>
+                        <button class="btn-outline scenic-detail" data-target="bell-drum-tower"><i class="fas fa-info-circle"></i> 详细信息</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 华清宫 -->
+            <div class="scenic-item ancient cultural nature" data-name="华清宫">
+                <div class="scenic-image">
+                    <img src="images/华清宫.jpg" alt="华清宫">
+                    <div class="scenic-badge">
+                        <span class="badge ancient">古迹遗址</span>
+                        <span class="badge nature">自然风光</span>
+                    </div>
+                </div>
+                <div class="scenic-content">
+                    <h2 class="scenic-title">华清宫</h2>
+                    <div class="scenic-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> 西安市临潼区</span>
+                        <span><i class="fas fa-clock"></i> 建议游览: 2-3小时</span>
+                        <span><i class="fas fa-ticket-alt"></i> 门票: ¥120</span>
+                    </div>
+                    <p class="scenic-desc">华清宫位于西安市临潼区骊山北麓，是中国古代皇家温泉园林，有着3000年的皇家园林史和6000年的温泉利用史。周、秦、汉、隋、唐等历代帝王在此修建离宫别苑。华清宫因唐玄宗和杨贵妃的爱情故事而闻名，也是"西安事变"的发生地。现今的华清宫是在唐代华清宫遗址上重建的。</p>
+                    <div class="scenic-features">
+                        <h4>景点特色:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> 唐代皇家温泉园林</li>
+                            <li><i class="fas fa-check-circle"></i> 唐玄宗与杨贵妃爱情故事发生地</li>
+                            <li><i class="fas fa-check-circle"></i> 欣赏大型实景历史舞剧《长恨歌》</li>
+                            <li><i class="fas fa-check-circle"></i> 温泉资源丰富，可体验温泉</li>
+                        </ul>
+                    </div>
+                    <div class="scenic-actions">
+                        <a href="#map-5" class="btn-outline"><i class="fas fa-map"></i> 查看地图</a>
+                        <button class="btn-outline add-to-plan"><i class="far fa-heart"></i> 加入行程</button>
+                        <button class="btn-outline scenic-detail" data-target="huaqing-palace"><i class="fas fa-info-circle"></i> 详细信息</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 旅游贴士 -->
+    <section class="travel-tips">
+        <div class="container">
+          <div class="tips-container"> 
+            <div class="section-header">
+                <h2 class="section-title">西安旅游贴士</h2>
+                <p class="section-subtitle">让您的西安之旅更加顺利愉快</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>最佳旅游时间</h3>
+                    <p>春季(3-5月)和秋季(9-11月)是西安最佳旅游季节，气候宜人，适合户外游览。夏季较热，冬季较冷，但游客较少。</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-walking"></i>
+                    </div>
+                    <h3>游览建议</h3>
+                    <p>建议安排3-4天游览西安主要景点。兵马俑距离市区较远，建议单独安排一天。市内景点可安排2-3天游览。</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>美食推荐</h3>
+                    <p>西安是美食之都，不要错过羊肉泡馍、肉夹馍、凉皮、biangbiang面等特色美食。回民街是品尝小吃的好去处。</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-subway"></i>
+                    </div>
+                    <h3>交通建议</h3>
+                    <p>西安地铁网络发达，可便捷到达主要景点。市区景点之间也可乘坐公交或打车。兵马俑可乘坐旅游专线或打车前往。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="city-footer xian-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><i class="fas fa-landmark"></i> 西安古都</h3>
+                    <p>十三朝古都，丝绸之路起点</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>西安页面</h4>
+                    <ul>
+                        <li><a href="西安首页.html"><i class="fas fa-chevron-right"></i> 西安首页</a></li>
+                        <li><a href="scenic.html"><i class="fas fa-chevron-right"></i> 主要景点</a></li>
+                        <li><a href="food.html"><i class="fas fa-chevron-right"></i> 地方美食</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>其他古都</h4>
+                    <ul>
+                        <li><a href="../蔡恩熙/北京首页.html"><i class="fas fa-chevron-right"></i> 北京</a></li>
+                        <li><a href="../李诗婷/南京首页.html"><i class="fas fa-chevron-right"></i> 南京</a></li>
+                        <li><a href="../index.html"><i class="fas fa-chevron-right"></i> 主首页</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>制作信息</h4>
+                    <p><i class="fas fa-user"></i> 王佩绮制作</p>
+                    <p><i class="fas fa-calendar"></i> 2025年</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 中国古都 - 西安模块 | 千年古都，常来长安</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 景点详情模态框 -->
+    <div class="modal-overlay" id="detail-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body" id="modal-body">
+                <!-- 动态内容 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+    <script src="scenic.js"></script>
+</body>
+</html>
