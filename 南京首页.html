@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南京 - 中国古都</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f8f3e9;
+            color: #333;
+            line-height: 1.6;
+            background-image: url('https://images.unsplash.com/photo-1587332278431-20279c6beba5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(to right, #8b0000, #b22222);
+            color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 3px;
+        }
+        
+        .logo span {
+            color: #ffd700;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* 主要内容样式 */
+        .main-content {
+            padding: 40px 0;
+            min-height: 70vh;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            color: #8b0000;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+        }
+        
+        .page-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #b22222;
+        }
+        
+        .content-section {
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            border: 1px solid #e0d6c1;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid #e0d6c1;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #b22222;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card h3 {
+            color: #b22222;
+            margin-bottom: 10px;
+            border-left: 3px solid #ffd700;
+            padding-left: 10px;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: rgba(51, 51, 51, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+            
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 页面切换动画 */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* 特色样式 */
+        .highlight {
+            color: #b22222;
+            font-weight: bold;
+        }
+        
+        .quote {
+            font-style: italic;
+            border-left: 4px solid #ffd700;
+            padding-left: 15px;
+            margin: 20px 0;
+            background-color: #fff9e6;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        
+        .intro-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .image-attribution {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: right;
+            margin-top: 5px;
+        }
+        
+        /* 新增样式 */
+        .hero-section {
+            background: linear-gradient(rgba(139, 0, 0, 0.7), rgba(178, 34, 34, 0.7)), 
+                        url('https://images.unsplash.com/photo-1598971861713-54ad16c9fe1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+        
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #b22222;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ffd700;
+            border: 4px solid #b22222;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        .map-container {
+            height: 400px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), 
+                        url('https://images.unsplash.com/photo-1559524637-7d65f8578b8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            color: white;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #e0d6c1;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .feature-list li:before {
+            content: "•";
+            color: #b22222;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+        
+        .food-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background: #fff9e6;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .food-icon {
+            font-size: 2rem;
+            color: #b22222;
+            margin-right: 15px;
+        }
+        
+        .seasonal-highlight {
+            background: linear-gradient(45deg, #8b0000, #b22222);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .seasonal-highlight h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>南京 - <span>中国古都</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> 主首页</a></li>
+                    <li><a href="#" class="nav-link active" data-page="culture">南京文化</a></li>
+                    <li><a href="#" class="nav-link" data-page="attractions">南京景点</a></li>
+                    <li><a href="#" class="nav-link" data-page="food">南京美食</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <div class="container">
+            <!-- 南京文化页面 -->
+            <div id="culture" class="page active">
+              <div class="hero-section" style="background-image: linear-gradient(rgba(100, 0, 0, 0.2), rgba(100, 0, 0, 0)), url('images/古都.jpg');">
+                    <h2>六朝古都，十朝都会</h2>
+                    <p>南京，承载着2500多年的建城史和近500年的建都史，是中国四大古都之一，素有"六朝古都，十朝都会"之美誉。</p>
+                </div>
+                
+                <div class="content-section">
+                    <p class="intro-text">南京，古称金陵、建康，是中国<span class="highlight">四大古都</span>之一，有着超过<span class="highlight">2500年</span>的建城史和近<span class="highlight">500年</span>的建都史。作为六朝古都，南京承载了厚重的历史文化底蕴，是中华文明的重要发祥地之一。</p>
+                    
+                    <div class="quote">
+                        "江南佳丽地，金陵帝王州。逶迤带绿水，迢递起朱楼。" —— 谢朓《入朝曲》
+                    </div>
+                    
+                    <p class="intro-text">南京文化融合了南北特色，既有北方的大气磅礴，又有南方的细腻婉约。从六朝文化到明文化，从民国建筑到现代艺术，南京形成了独特而多元的文化风貌。</p>
+                    
+                    <h3 style="color: #8b0000; margin: 30px 0 15px;">南京历史时间线</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>六朝时期 (229-589年)</h4>
+                                <p>东吴、东晋、宋、齐、梁、陈六朝相继建都南京，史称"六朝古都"。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>南唐时期 (937-975年)</h4>
+                                <p>南唐建都金陵，文化繁荣，李煜的词作流传千古。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>明朝时期 (1368-1421年)</h4>
+                                <p>朱元璋建立明朝，定都南京，修建明城墙、明孝陵等宏伟建筑。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>太平天国 (1853-1864年)</h4>
+                                <p>太平天国定都南京，改称天京，现存天王府遗址。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>中华民国 (1927-1949年)</h4>
+                                <p>南京成为中华民国首都，留下大量民国建筑和文化遗产。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="card">
+                            <img src="images/六朝文化.jpg" alt="南京古城墙" class="card-img">
+                            <div class="card-content">
+                                <h3>六朝文化</h3>
+                                <p>南京是六朝时期的都城，六朝文化对南京产生了深远影响，形成了独特的文化气质。这一时期的文学、艺术和哲学成就对后世影响深远。</p>
+                                <ul class="feature-list">
+                                    <li>六朝石刻艺术精湛</li>
+                                    <li>佛教文化繁荣发展</li>
+                                    <li>文学创作达到高峰</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="images/明文化.jpg" alt="明孝陵" class="card-img">
+                            <div class="card-content">
+                                <h3>明文化</h3>
+                                <p>明朝时期，南京作为首都，留下了丰富的历史遗迹和文化传统。明孝陵、明城墙等都是这一时期的重要文化遗产。</p>
+                                <ul class="feature-list">
+                                    <li>明城墙是世界最长城墙</li>
+                                    <li>明孝陵是明朝皇家陵寝典范</li>
+                                    <li>明代科举文化影响深远</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="images/民国文化.jpg" alt="总统府" class="card-img">
+                            <div class="card-content">
+                                <h3>民国文化</h3>
+                                <p>民国时期，南京作为首都，形成了独特的民国建筑风格和文化氛围。中山陵、总统府等都是这一时期的代表性建筑。</p>
+                                <ul class="feature-list">
+                                    <li>中西合璧的建筑风格</li>
+                                    <li>现代教育体系建立</li>
+                                    <li>新闻出版业繁荣</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 南京景点页面 -->
+            <div id="attractions" class="page">
+                <div class="hero-section" style="background-image: linear-gradient(rgba(100, 0, 0, 0.2), rgba(100, 0, 0, 0)), url('images/景点.jpg');">
+                    <h2>金陵胜景，山水城林</h2>
+                    <p>南京拥有丰富的自然景观和人文遗迹，山水城林融为一体，既有龙盘虎踞之雄，又有江南水乡之秀。</p>
+                </div>
+                
+                <div class="content-section">
+                    <p class="intro-text">南京拥有众多历史遗迹和自然景观，每一处都承载着深厚的历史文化内涵。从皇家陵墓到江南园林，从民国建筑到现代地标，南京的景点展现了这座古都的多元魅力。</p>
+                    
+                    <div class="map-container"style="background-image: linear-gradient(rgba(100, 0, 0, 0.2), rgba(100, 0, 0, 0)), url('images/分布.jpg');">
+
+                        <div>南京主要景点分布图</div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="card">
+                            <img src="images/中山陵.jpg" alt="中山陵" class="card-img">
+                            <div class="card-content">
+                                <h3>中山陵</h3>
+                                <p>中山陵是中国近代伟大的民主革命先行者孙中山先生的陵寝，被誉为"中国近代建筑史上第一陵"。其建筑风格融合中西，气势宏伟。</p>
+                                <div class="feature-list">
+                                    <li><strong>地址：</strong>南京市玄武区石象路7号</li>
+                                    <li><strong>开放时间：</strong>08:30-17:00（周一闭馆）</li>
+                                    <li><strong>建议游玩：</strong>2-3小时</li>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="images/夫子庙.jpg" alt="夫子庙" class="card-img">
+                            <div class="card-content">
+                                <h3>夫子庙</h3>
+                                <p>夫子庙是中国四大文庙之一，是供奉和祭祀孔子的地方。周围的秦淮河风光带是南京最富盛名的旅游景区之一，展现了江南水乡的独特韵味。</p>
+                                <div class="feature-list">
+                                    <li><strong>地址：</strong>南京市秦淮区夫子庙街道</li>
+                                    <li><strong>特色：</strong>秦淮灯会、传统小吃</li>
+                                    <li><strong>最佳游览时间：</strong>夜晚</li>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="images/孝陵.jpg" alt="明孝陵" class="card-img">
+                            <div class="card-content">
+                                <h3>明孝陵</h3>
+                                <p>明孝陵是明朝开国皇帝朱元璋及其皇后的合葬陵墓，是中国规模最大的帝王陵寝之一，2003年被列入世界文化遗产名录。</p>
+                                <div class="feature-list">
+                                    <li><strong>地址：</strong>南京市玄武区紫金山南麓</li>
+                                    <li><strong>世界遗产：</strong>明清皇家陵寝的一部分</li>
+                                    <li><strong>神道石像：</strong>600多年历史</li>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="images/总统府.jpg" alt="总统府" class="card-img">
+                            <div class="card-content">
+                                <h3>总统府</h3>
+                                <p>南京总统府是中国近代建筑遗存中规模最大、保存最完整的建筑群，也是南京民国建筑的主要代表，现已辟为中国近代史博物馆。</p>
+                                <div class="feature-list">
+                                    <li><strong>地址：</strong>南京市玄武区长江路292号</li>
+                                    <li><strong>历史：</strong>太平天国天王府遗址</li>
+                                    <li><strong>展览：</strong>民国历史文物展</li>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="images/玄武湖.jpg" alt="玄武湖" class="card-img">
+                            <div class="card-content">
+                                <h3>玄武湖</h3>
+                                <p>玄武湖是江南地区最大的城内公园，也是中国最大的皇家园林湖泊之一，被誉为"金陵明珠"，是南京重要的文化休闲场所。</p>
+                                <div class="feature-list">
+                                    <li><strong>地址：</strong>南京市玄武区</li>
+                                    <li><strong>面积：</strong>502公顷</li>
+                                    <li><strong>五洲：</strong>环洲、樱洲、菱洲、梁洲、翠洲</li>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="images/南京博物馆.jpg" alt="南京博物院" class="card-img">
+                            <div class="card-content">
+                                <h3>南京博物院</h3>
+                                <p>南京博物院是中国三大博物馆之一，馆藏文物丰富，展示了江苏地区从古至今的历史文化发展脉络，是了解南京历史的重要窗口。</p>
+                                <div class="feature-list">
+                                    <li><strong>地址：</strong>南京市玄武区中山东路321号</li>
+                                    <li><strong>馆藏：</strong>43万余件文物</li>
+                                    <li><strong>特色：</strong>民国馆、数字馆</li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="seasonal-highlight">
+                        <h3>季节性旅游推荐</h3>
+                        <p>春季：梅花山赏梅 | 夏季：玄武湖观荷 | 秋季：栖霞山赏枫 | 冬季：汤山温泉</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 南京美食页面 -->
+            <div id="food" class="page">
+                <div class="hero-section" style="background-image: linear-gradient(rgba(100, 0, 0, 0.2), rgba(100, 0, 0, 0)), url('images/美食.jpg');">
+                    <h2>金陵美食，舌尖上的南京</h2>
+                    <p>南京菜又称"京苏大菜"，选料严谨，制作精细，讲究刀工，注重原汁原味，是江苏菜系的重要组成部分。</p>
+                </div>
+                
+                <div class="content-section">
+                    <p class="intro-text">南京菜又称"京苏大菜"，是江苏菜系的重要组成部分。南京美食选料严谨，制作精细，讲究刀工，注重原汁原味，擅长炖、焖、叉、烤等烹调方法。</p>
+                    
+                    <div class="quote">
+                        "金陵鸭馔甲天下" —— 南京以鸭肉制作的美食闻名全国
+                    </div>
+                    
+                    <div class="food-detail">
+                        <div class="food-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div>
+                            <h3 style="color: #b22222; margin-bottom: 10px;">南京美食特点</h3>
+                            <p>南京菜口味平和，鲜香酥嫩，菜品细致精美，格调高雅。在制作上特别讲究刀工，擅长炖、焖、叉、烤。尤其以鸭肴最具盛名，南京制鸭技术久负盛名，早在1400多年前的南朝时期就有记载。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="card">
+                            <img src="images/1.jpg" alt="盐水鸭" class="card-img">
+                            <div class="card-content">
+                                <h3>盐水鸭</h3>
+                                <p>南京盐水鸭制作历史悠久，皮白肉嫩，肥而不腻，香鲜味美，具有香、酥、嫩的特点。中秋前后桂花盛开季节制作的盐水鸭色味最佳，名为桂花鸭。</p>
+                                <div class="feature-list">
+                                    <li><strong>特点：</strong>皮白肉嫩，肥而不腻</li>
+                                    <li><strong>历史：</strong>已有2500多年历史</li>
+                                    <li><strong>最佳品尝地：</strong>韩复兴、章云板鸭</li>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="images/2.jpg" alt="鸭血粉丝汤" class="card-img">
+                            <div class="card-content">
+                                <h3>鸭血粉丝汤</h3>
+                                <p>鸭血粉丝汤是南京的传统名吃，由鸭血、鸭肠、鸭肝等加入鸭汤和粉丝制成。口感鲜香，爽口宜人，是南京人最常吃的小吃之一。</p>
+                                <div class="feature-list">
+                                    <li><strong>特点：</strong>汤汁鲜美，用料丰富</li>
+                                    <li><strong>起源：</strong>镇江传入，南京改良</li>
+                                    <li><strong>知名品牌：</strong>回味、金源</li>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="images/3.jpg" alt="小笼包" class="card-img">
+                            <div class="card-content">
+                                <h3>小笼包</h3>
+                                <p>南京小笼包讲究汤汁，做工精细。小笼包皮薄馅大，汤汁浓郁，吃时先咬一小口，吸出汤汁，再品尝馅料，是南京人早餐的常见选择。</p>
+                                <div class="feature-list">
+                                    <li><strong>特点：</strong>皮薄馅大，汤汁丰富</li>
+                                    <li><strong>吃法：</strong>轻轻提，慢慢移，先开窗，后喝汤</li>
+                                    <li><strong>推荐：</strong>尹氏鸡汁汤包</li>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="images/4.jpg" alt="牛肉锅贴" class="card-img">
+                            <div class="card-content">
+                                <h3>牛肉锅贴</h3>
+                                <p>南京的牛肉锅贴是当地著名小吃，外皮酥脆，内馅鲜嫩多汁，形状像月牙，底部煎得金黄酥脆，是南京人喜爱的点心之一。</p>
+                                <div class="feature-list">
+                                    <li><strong>特点：</strong>外酥里嫩，馅料鲜美</li>
+                                    <li><strong>形状：</strong>月牙形，底部金黄</li>
+                                    <li><strong>知名店铺：</strong>李记清真馆</li>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="images/5.jpg" alt="梅花糕" class="card-img">
+                            <div class="card-content">
+                                <h3>梅花糕</h3>
+                                <p>梅花糕是南京传统糕点，因其形如梅花而得名。糕体松软，馅料丰富，有豆沙、枣泥等多种口味，是南京的传统甜点。</p>
+                                <div class="feature-list">
+                                    <li><strong>特点：</strong>形如梅花，香甜软糯</li>
+                                    <li><strong>历史：</strong>源于明朝，历史悠久</li>
+                                    <li><strong>馅料：</strong>豆沙、枣泥、果仁等</li>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="images/6.jpg" alt="糖芋苗" class="card-img">
+                            <div class="card-content">
+                                <h3>糖芋苗</h3>
+                                <p>糖芋苗是南京的传统甜点，选用新鲜小芋头，加入红糖、桂花等熬制而成，口感软糯香甜，是南京人秋冬季最喜爱的甜品之一。</p>
+                                <div class="feature-list">
+                                    <li><strong>特点：</strong>香甜软糯，桂香浓郁</li>
+                                    <li><strong>季节：</strong>秋冬季最佳</li>
+                                    <li><strong>配料：</strong>芋头、红糖、桂花</li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="seasonal-highlight">
+                        <h3>美食街区推荐</h3>
+                        <p>夫子庙美食街 | 老门东历史街区 | 狮子桥美食街 | 科巷菜场周边</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚区域 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 南京 - 中国古都 </p>
+        </div>
+    </footer>
+
+    <script>
+        // 页面切换功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+            
+            // 为导航链接添加点击事件
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 移除所有活动状态
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    pages.forEach(page => page.classList.remove('active'));
+                    
+                    // 添加当前活动状态
+                    this.classList.add('active');
+                    const pageId = this.getAttribute('data-page');
+                    document.getElementById(pageId).classList.add('active');
+                    
+                    // 滚动到顶部
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                });
+            });
+            
+            // 为卡片添加悬停效果
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
+                });
+            });
+            
+            // 模拟图片加载效果
+            const cardImages = document.querySelectorAll('.card-img');
+            cardImages.forEach(img => {
+                img.style.opacity = '0';
+                setTimeout(() => {
+                    img.style.transition = 'opacity 0.5s ease';
+                    img.style.opacity = '1';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
