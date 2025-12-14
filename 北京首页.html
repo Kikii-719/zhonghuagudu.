@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京 - 帝王之都</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .city-footer {
+            background: #f5f3ed; 
+            padding: 50px 0 20px;
+            margin-top: 60px;
+            border-top: 2px solid #d4a017; 
+            font-family: 'Noto Serif SC', serif;
+        }
+        .city-footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr; 
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #ccc;
+        }
+        .footer-col h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #d4a017; 
+        }
+        .footer-col p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+        .footer-col ul li a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover {
+            color: #d4a017;
+            padding-left: 5px; 
+        }
+        .footer-copyright {
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+            padding-top: 10px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="city-nav">
+        <div class="container">
+            <h1 class="logo">北京·帝王之都</h1>
+            <ul class="city-nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> 返回主首页</a></li>
+                <li><a href="北京首页.html" class="active">北京首页</a></li>
+                <li><a href="主要景点.html">主要景点</a></li>
+                <li><a href="北京美食.html">地方美食</a></li>
+                <li><a href="京味文化.html">京味文化</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+
+    <header class="city-hero">
+        <div class="city-hero-content">
+            <h1>北京·帝王之都</h1>
+            <p>八百年古都，中华文明的璀璨明珠</p>
+        </div>
+    </header>
+
+
+    <section class="city-intro">
+        <div class="container">
+            <div class="city-intro-grid">
+                <div class="city-intro-text">
+                    <h2>北京简介</h2>
+                    <p>北京，中华人民共和国的首都，是一座有着三千多年历史的古都。公元前1045年，北京成为蓟、燕等诸侯国的都城。公元938年以来，北京先后成为辽陪都、金中都、元大都、明、清国都以及中华民国北洋政府首都。1949年10月1日成为中华人民共和国首都。</p>
+                    <p>北京是世界著名古都和现代化国际城市，也是中国共产党中央委员会、中华人民共和国中央人民政府和全国人民代表大会常务委员会所在地。北京位于华北平原北部，背靠燕山，毗邻天津市和河北省。</p>
+                    <p>北京拥有众多历史文化遗产，如故宫、天坛、颐和园、圆明园、明十三陵等，还有胡同、四合院等传统建筑。北京也是一座现代化国际大都市，拥有众多高等院校、科研机构和文化设施。</p>
+                    <a href="主要景点.html" class="btn">探索北京景点</a> <!-- 修正链接：原scenic.html改为主要景点.html，确保跳转正确 -->
+                </div>
+                <div class="city-intro-image">
+                    <div class="image-frame">
+                        <img src="images/插图1.jpg" alt="北京天安门">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="city-features">
+        <div class="container">
+            <h2 class="section-title">北京特色</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>皇家建筑</h3>
+                    <p>故宫、天坛、颐和园等皇家建筑群，展现了中国古代建筑艺术的最高成就。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>美食之都</h3>
+                    <p>北京烤鸭、炸酱面、豆汁、驴打滚等传统美食，传承着老北京的味道。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-theater-masks"></i>
+                    </div>
+                    <h3>京味文化</h3>
+                    <p>京剧、相声、胡同文化、四合院，展现独特的京味文化和民俗风情。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="city-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>北京·帝王之都</h4>
+                    <p>本模块为中国古都文化展示项目，涵盖北京的景点、美食与特色文化，带你沉浸式感受千年古都的独特魅力。</p>
+                    <p style="margin-top: 10px; color: #999; font-size: 0.9rem;">制作者：蔡恩熙</p>
+                </div>
+                <div class="footer-col">
+                    <h4>北京专区</h4>
+                    <ul>
+                        <li><a href="北京首页.html">北京首页</a></li>
+                        <li><a href="主要景点.html">主要景点</a></li>
+                        <li><a href="北京美食.html">地方美食</a></li>
+                        <li><a href="京味文化.html">京味文化</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>其他古都</h4>
+                    <ul>
+                        <li><a href="../王佩绮/西安首页.html">西安</a></li>
+                        <li><a href="../李诗婷/南京首页.html">南京</a></li>
+                        <li><a href="#">洛阳（待更新）</a></li>
+                        <li><a href="#">开封（待更新）</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="../index.html">主首页</a></li>
+                        <li><a href="#top">返回顶部</a></li>
+                        <li><a href="#">关于项目</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2025 中国古都文化展示平台 | 禁止商用 侵权必究</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

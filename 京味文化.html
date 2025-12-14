@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京 - 京味文化</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* 保持头部风格统一 */
+        .culture-header {
+            text-align: center;
+            margin: 40px 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .culture-header h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .culture-header p {
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .culture-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .culture-tab {
+            padding: 10px 20px;
+            color: #666;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .culture-tab.active {
+            color: #d4a017;
+            border-bottom: 3px solid #d4a017;
+            font-weight: 700;
+        }
+        .culture-tab:hover {
+            color: #d4a017;
+        }
+
+        .culture-container {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+        .culture-module {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 30px;
+        }
+        .culture-module:nth-child(even) {
+            grid-template-columns: 1fr 400px;
+        }
+        .culture-module:nth-child(even) .culture-img {
+            order: 2;
+        }
+
+        .culture-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .culture-content {
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .culture-content h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .culture-content h3 i {
+            color: #d4a017;
+            font-size: 1.5rem;
+        }
+        .culture-desc {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .culture-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .culture-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #888;
+            background: #f9f9f9;
+            padding: 6px 12px;
+            border-radius: 15px;
+        }
+        .culture-feature i {
+            color: #d4a017;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .culture-module, .culture-module:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+            .culture-module:nth-child(even) .culture-img {
+                order: 1;
+            }
+            .culture-img {
+                height: 250px;
+            }
+            .culture-content {
+                padding: 25px;
+            }
+        }
+        @media (max-width: 576px) {
+            .culture-img {
+                height: 200px;
+            }
+            .culture-header h1 {
+                font-size: 1.8rem;
+            }
+            .culture-content h3 {
+                font-size: 1.5rem;
+            }
+        }
+        .city-footer {
+            background: #f5f3ed; 
+            padding: 50px 0 20px;
+            margin-top: 60px;
+            border-top: 2px solid #d4a017; 
+            font-family: 'Noto Serif SC', serif; 
+        }
+        .city-footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr; 
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #ccc; 
+        }
+        .footer-col h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #d4a017; 
+        }
+        .footer-col p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+        .footer-col ul li a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover {
+            color: #d4a017;
+            padding-left: 5px; 
+        }
+        .footer-copyright {
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+            padding-top: 10px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="city-nav">
+        <div class="container">
+            <h1 class="logo">北京·帝王之都</h1>
+            <ul class="city-nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> 返回主首页</a></li>
+                <li><a href="北京首页.html">北京首页</a></li>
+                <li><a href="主要景点.html">主要景点</a></li>
+                <li><a href="北京美食.html">地方美食</a></li>
+                <li><a href="京味文化.html" class="active">京味文化</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header class="culture-header">
+        <h1>老北京·京味文化</h1>
+        <p>浸润千年古都底蕴，沉淀独有的市井风情与人文气质，感受原汁原味的北京韵味</p>
+    </header>
+
+    <div class="culture-tabs">
+        <div class="culture-tab active">传统曲艺</div>
+        <div class="culture-tab">胡同四合院</div>
+        <div class="culture-tab">京腔京韵</div>
+        <div class="culture-tab">民俗风情</div>
+    </div>
+
+    <section class="culture-section">
+        <div class="culture-container">
+            <div class="culture-module">
+                <img src="images/京剧.jpg" alt="京剧" class="culture-img">
+                <div class="culture-content">
+                    <h3><i class="fas fa-theater-masks"></i> 京剧</h3>
+                    <p class="culture-desc">中国国粹，又称“皮黄”，形成于清代乾隆年间，融合了唱、念、做、打四种艺术形式。京剧以程式化的表演、华丽的服饰、精美的脸谱为特色，脸谱颜色代表不同性格（红忠、黑直、白奸等）。经典剧目有《霸王别姬》《贵妃醉酒》《定军山》等，是中国传统文化的集大成者，2010年被列入联合国非物质文化遗产名录。</p>
+                    <div class="culture-features">
+                        <div class="culture-feature"><i class="fas fa-star"></i> 中国国粹</div>
+                        <div class="culture-feature"><i class="fas fa-history"></i> 200余年历史</div>
+                        <div class="culture-feature"><i class="fas fa-map-marker-alt"></i> 代表场馆：长安大戏院</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="culture-module">
+                <img src="images/胡同.jpg" alt="胡同与四合院" class="culture-img">
+                <div class="culture-content">
+                    <h3><i class="fas fa-home"></i> 胡同与四合院</h3>
+                    <p class="culture-desc">老北京的城市骨架与居住灵魂。胡同是连接四合院的狭窄街巷，源于元代“街巷”之称，最窄的胡同仅0.4米。四合院是北京传统民居，以中轴线对称布局，四面房屋围合成院落，寓意“天圆地方”“阖家团圆”。南锣鼓巷、烟袋斜街、什刹海周边的胡同保存最完整，漫步其中可感受老北京的市井生活与慢时光。</p>
+                    <div class="culture-features">
+                        <div class="culture-feature"><i class="fas fa-building"></i> 传统民居代表</div>
+                        <div class="culture-feature"><i class="fas fa-map"></i> 核心区域：什刹海、南锣鼓巷</div>
+                        <div class="culture-feature"><i class="fas fa-heart"></i> 文化内涵：邻里和睦</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="culture-module">
+                <img src="images/相声.jpg" alt="相声" class="culture-img">
+                <div class="culture-content">
+                    <h3><i class="fas fa-comments"></i> 相声</h3>
+                    <p class="culture-desc">起源于北京的民间说唱曲艺，以“说、学、逗、唱”为核心技艺，讲究“铺平垫稳、三翻四抖”的包袱技巧。相声诞生于清代，早期以街头表演为主，后进入茶馆、剧场。著名相声流派有侯派、马派、常派等，经典作品《卖拐》《虎口遐想》《五官争功》等家喻户晓。如今德云社等团体让相声焕发新生，成为年轻人喜爱的传统文化形式。</p>
+                    <div class="culture-features">
+                        <div class="culture-feature"><i class="fas fa-smile"></i> 语言艺术</div>
+                        <div class="culture-feature"><i class="fas fa-users"></i> 表演形式：单口、对口、群口</div>
+                        <div class="culture-feature"><i class="fas fa-map-marker-alt"></i> 代表场馆：德云社、老舍茶馆</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="culture-module">
+                <img src="images/民俗.jpg" alt="老北京民俗" class="culture-img">
+                <div class="culture-content">
+                    <h3><i class="fas fa-dragon"></i> 老北京民俗</h3>
+                    <p class="culture-desc">融合了宫廷礼仪与市井风情的独特民俗文化。春节逛庙会（地坛、龙潭庙会）、元宵节猜灯谜、端午节戴五彩绳、中秋节赏月吃月饼，每个节日都有专属习俗。此外，冰糖葫芦、捏面人、吹糖人、抖空竹等传统技艺与小吃，构成了老北京的民俗画卷。老北京人讲究“礼儿”，待人接物的规矩、称呼礼仪等，都体现着京味文化的谦和与讲究。</p>
+                    <div class="culture-features">
+                        <div class="culture-feature"><i class="fas fa-calendar-alt"></i> 特色节日：春节庙会</div>
+                        <div class="culture-feature"><i class="fas fa-hand-sparkles"></i> 传统技艺：捏面人、吹糖人</div>
+                        <div class="culture-feature"><i class="fas fa-gift"></i> 文化核心：礼尚往来</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="city-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-col">
+                    <h4>北京·帝王之都</h4>
+                    <p>本模块为中国古都文化展示项目，涵盖北京的景点、美食与特色文化，带你沉浸式感受千年古都的独特魅。</p>
+                    <p style="margin-top: 10px; color: #999; font-size: 0.9rem;">制作者：蔡恩熙</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>北京专区</h4>
+                    <ul>
+                        <li><a href="北京首页.html">北京首页</a></li>
+                        <li><a href="主要景点.html">主要景点</a></li>
+                        <li><a href="北京美食.html">地方美食</a></li>
+                        <li><a href="京味文化.html">京味文化</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>其他古都</h4>
+                    <ul>
+                        <li><a href="../王佩绮/西安首页.html">西安</a></li>
+                        <li><a href="../李诗婷/南京首页.html">南京</a></li>
+                        <li><a href="#">洛阳（待更新）</a></li>
+                        <li><a href="#">开封（待更新）</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="../index.html">主首页</a></li>
+                        <li><a href="#top">返回顶部</a></li>
+                        <li><a href="#">关于项目</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2025 中国古都文化展示平台 | 禁止商用 侵权必究</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+    <script>
+        // 分类标签切换效果
+        const tabs = document.querySelectorAll('.culture-tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+            });
+        });
+    </script>
+</body>
+</html>

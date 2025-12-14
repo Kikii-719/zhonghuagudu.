@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京 - 主要景点</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        .scenic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .scenic-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .scenic-card:hover {
+            transform: translateY(-5px); 
+        }
+        .scenic-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; 
+        }
+        .scenic-content {
+            padding: 20px;
+        }
+        .scenic-content h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .scenic-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .scenic-meta {
+            display: flex;
+            gap: 15px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        .scenic-meta i {
+            margin-right: 5px;
+            color: #c9a66b; 
+        }
+
+        .scenic-header {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .scenic-header h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .scenic-header p {
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+
+        .city-footer {
+            background: #f5f3ed; 
+            padding: 50px 0 20px;
+            margin-top: 60px;
+            border-top: 2px solid #d4a017; 
+            font-family: 'Noto Serif SC', serif; 
+        }
+        .city-footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #ccc; 
+        }
+        .footer-col h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #d4a017; 
+        }
+        .footer-col p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+        .footer-col ul li a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover {
+            color: #d4a017;
+            padding-left: 5px; 
+        }
+        .footer-copyright {
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+            padding-top: 10px;
+        }
+
+
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="city-nav">
+        <div class="container">
+            <h1 class="logo">北京·帝王之都</h1>
+            <ul class="city-nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> 返回主首页</a></li>
+                <li><a href="北京首页.html">北京首页</a></li>
+                <li><a href="主要景点.html" class="active">主要景点</a></li>
+                <li><a href="北京美食.html">地方美食</a></li>
+                <li><a href="京味文化.html">京味文化</a></li> 
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+
+    <header class="scenic-header">
+        <h1>北京主要景点</h1>
+        <p>漫步古都街巷，探寻皇家气派与历史沉淀，感受中华文明的千年魅力</p>
+    </header>
+
+
+    <section class="scenic-section">
+        <div class="container">
+            <div class="scenic-grid">
+                <!-- 故宫博物院 -->
+                <div class="scenic-card">
+                    <img src="images/故宫.jpg" alt="故宫博物院" class="scenic-img">
+                    <div class="scenic-content">
+                        <h3>故宫博物院</h3>
+                        <p>旧称紫禁城，是明清两代的皇家宫殿，中国古代宫廷建筑之精华。占地72万平方米，有大小宫殿70多座，房屋9000余间，是世界上现存规模最大、保存最为完整的木质结构古建筑之一。</p>
+                        <div class="scenic-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> 东城区景山前街4号</span>
+                            <span><i class="fas fa-clock"></i> 8:30-17:00（周一闭馆）</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="scenic-card">
+                    <img src="images/天坛.jpg" alt="天坛公园" class="scenic-img">
+                    <div class="scenic-content">
+                        <h3>天坛公园</h3>
+                        <p>明清两代皇帝祭天、祈谷的场所，以严谨的建筑布局、奇特的建筑构造和瑰丽的建筑装饰著称于世。主要建筑有祈年殿、皇穹宇、圜丘坛等，是中国古代祭祀建筑的杰出代表。</p>
+                        <div class="scenic-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> 东城区天坛路甲1号</span>
+                            <span><i class="fas fa-clock"></i> 6:00-22:00（景区开放时间）</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="scenic-card">
+                    <img src="images/颐和园.jpg" alt="颐和园" class="scenic-img">
+                    <div class="scenic-content">
+                        <h3>颐和园</h3>
+                        <p>中国清朝时期的皇家行宫花园，前身为清漪园，坐落在北京西郊，距城区十五公里，占地约二百九十公顷，与圆明园毗邻。以昆明湖、万寿山为基址，汲取江南园林的设计手法而建成的一座大型山水园林。</p>
+                        <div class="scenic-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> 海淀区新建宫门路19号</span>
+                            <span><i class="fas fa-clock"></i> 6:30-18:00（旺季）</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="scenic-card">
+                    <img src="images/长城.jpg" alt="八达岭长城" class="scenic-img">
+                    <div class="scenic-content">
+                        <h3>八达岭长城</h3>
+                        <p>明长城中保存最好的一段，也是最具代表性的一段。是明代长城的精华地段，海拔高达1015米，城墙高7.8米，顶宽5米，底宽6.5米，地势险要，城关坚固。</p>
+                        <div class="scenic-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> 延庆区军都山关沟古道北口</span>
+                            <span><i class="fas fa-clock"></i> 7:30-17:30（旺季）</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="scenic-card">
+                    <img src="images/什刹海.jpg" alt="什刹海" class="scenic-img">
+                    <div class="scenic-content">
+                        <h3>什刹海</h3>
+                        <p>由前海、后海、西海三块水面组成的什刹海，为了与北海、中海、南海“前三海”区别，被称作“后三海”。这里是老北京风貌保存最完好的区域之一，周边有众多王府、寺庙、胡同和名人故居。</p>
+                        <div class="scenic-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> 西城区什刹海街道</span>
+                            <span><i class="fas fa-clock"></i> 全天开放（周边商户营业时间不一）</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scenic-card">
+                    <img src="images/明十三陵.jpg" alt="明十三陵" class="scenic-img">
+                    <div class="scenic-content">
+                        <h3>明十三陵</h3>
+                        <p>明朝迁都北京后13位皇帝陵墓的皇家陵寝的总称，依次建有长陵（明成祖）、献陵（明仁宗）、景陵（明宣宗）、裕陵（明英宗）等，建筑规模宏大，体系完整，是中国古代皇家陵寝的杰出代表。</p>
+                        <div class="scenic-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> 昌平区十三陵镇</span>
+                            <span><i class="fas fa-clock"></i> 8:30-17:00（旺季）</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="city-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>北京·帝王之都</h4>
+                    <p>本模块为中国古都文化展示项目，涵盖北京的景点、美食与特色文化，带你沉浸式感受千年古都的独特魅力。</p>
+                    <p style="margin-top: 10px; color: #999; font-size: 0.9rem;">制作者：蔡恩熙</p>
+                </div>
+                <div class="footer-col">
+                    <h4>北京专区</h4>
+                    <ul>
+                        <li><a href="北京首页.html">北京首页</a></li>
+                        <li><a href="主要景点.html">主要景点</a></li>
+                        <li><a href="北京美食.html">地方美食</a></li>
+                        <li><a href="京味文化.html">京味文化</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>其他古都</h4>
+                    <ul>
+                        <li><a href="../王佩绮/西安首页.html">西安</a></li>
+                        <li><a href="../李诗婷/南京首页.html">南京</a></li>
+                        <li><a href="#">洛阳（待更新）</a></li>
+                        <li><a href="#">开封（待更新）</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="../index.html">主首页</a></li>
+                        <li><a href="#top">返回顶部</a></li>
+                        <li><a href="#">关于项目</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2025 中国古都文化展示平台 | 禁止商用 侵权必究</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
